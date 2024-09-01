@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Item List</h2>
+  
+    <!-- Search and Filter Section -->
+    <div class="form-group">
+      <input type="text" placeholder="Search..." class="form-control" [(ngModel)]="searchTerm" (input)="filterItems()">
+    </div>
+  
+    <!-- Sort Section -->
+    <div class="form-group">
+      <label for="sortOrder">Sort Order:</label>
+      <select id="sortOrder" class="form-control" [(ngModel)]="sortOrder" (change)="sortItems()">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+  
+    <!-- Display Items -->
+    <ul class="list-group">
+      <li *ngFor="let item of filteredItems" class="list-group-item">
+        {{ item.API }} - {{ item.Description }}
+      </li>
+    </ul>
+  </div>
+  
